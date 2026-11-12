@@ -70,6 +70,7 @@ await cp(path.join(root, 'media', 'webview.js'), path.join(tempDir, 'media', 'we
 await cp(path.join(root, 'media', 'preview.css'), path.join(tempDir, 'media', 'preview.css'));
 await cp(path.join(root, 'media', 'temml.css'), path.join(tempDir, 'media', 'temml.css'));
 await cp(path.join(root, 'media', 'Temml.woff2'), path.join(tempDir, 'media', 'Temml.woff2'));
+await cp(path.join(root, 'media', 'icon.png'), path.join(tempDir, 'media', 'icon.png'));
 await cp(path.join(root, 'syntaxes'), path.join(tempDir, 'syntaxes'), { recursive: true });
 
 const vsceScript = path.join(root, 'node_modules', '@vscode', 'vsce', 'vsce');
