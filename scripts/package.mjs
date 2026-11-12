@@ -72,16 +72,11 @@ await cp(path.join(root, 'media', 'temml.css'), path.join(tempDir, 'media', 'tem
 await cp(path.join(root, 'media', 'Temml.woff2'), path.join(tempDir, 'media', 'Temml.woff2'));
 await cp(path.join(root, 'syntaxes'), path.join(tempDir, 'syntaxes'), { recursive: true });
 
-const vsce = path.join(
-  root,
-  'node_modules',
-  '.bin',
-  process.platform === 'win32' ? 'vsce.cmd' : 'vsce'
-);
+const vsceScript = path.join(root, 'node_modules', '@vscode', 'vsce', 'vsce');
 const output = path.join(root, `${packageJson.name}-${packageJson.version}.vsix`);
 const result = spawnSync(
-  vsce,
-  ['package', '--no-dependencies', '--out', output],
+  process.execPath,
+  [vsceScript, 'package', '--no-dependencies', '--out', output],
   { cwd: tempDir, stdio: 'inherit' }
 );
 
